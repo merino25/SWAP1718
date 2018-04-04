@@ -47,7 +47,7 @@ Un ejemplo podría ser la siguiente tarea, la cual eliminará todos los archivos
 ```
 
 
-El valor * indica el valor "todo", si el * se encuentra en horas indica a cualquier hora del día.
+El valor * indica el valor "todo"(Ejemplo: si el * se encuentra en horas indica a cualquier hora del día).
 
 El valor */n indica cada n veces:
     **Ejemplo:** La siguiente orden apagará el ordenador cada 3 minutos.
