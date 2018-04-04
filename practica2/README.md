@@ -36,6 +36,7 @@ cron es un administrador procesos en segundo plano que ejecuta procesos en el
 instante indicado en el fichero crontab (se encuentra en */etc/crontab*).
 
 Para automatizar un nuevo proceso hay que seguir el siguiente orden:
+
 *Minuto Hora DiaDelMes Mes DiaDeLaSemana Usuario Comando*
 
 30 15 * * *   usuario_actual rsync -avz -e ssh usuario_actual@ip_maquina2:/
