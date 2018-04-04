@@ -76,7 +76,7 @@ El valor */n indica cada n veces:
 
 ![crontab](images/crontabmodificado.PNG) 
 
-### 6. Programación de la tarea una vez realizado chown swap1:swap1 -R /var/www
+### 6. Programación de la tarea creada en crontab una vez realizado chown swap1:swap1 -R /var/www
 
 ![crontab](images/conexioncrontab.PNG) 
 
