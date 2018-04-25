@@ -5,6 +5,7 @@ En esta práctica configuraremos una red entre varias máquinas de forma que ten
 
 Utilizaremos balanceo por software. Existen
 varias alternativas para balancear HTTP por software:
+
 •  [HaProxy](http://haproxy.1wt.eu/)
 
 •  [Pound]( http://www.apsis.ch/pound/)
