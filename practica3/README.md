@@ -6,10 +6,15 @@ En esta práctica configuraremos una red entre varias máquinas de forma que ten
 Utilizaremos balanceo por software. Existen
 varias alternativas para balancear HTTP por software:
 •  [HaProxy](http://haproxy.1wt.eu/)
+
 •  [Pound]( http://www.apsis.ch/pound/)
+
 •  [Varnish]( http://varnish-cache.org)
+
 •  [NginX]( http://nginx.org/)
+
 •  [Lighty]( http://www.lighttpd.net/)
+
 •  [Apache]( http://httpd.apache.org/)
 
 
@@ -127,7 +132,7 @@ upstream apaches {
 	}
 	```
 ## Pasos para instalar el servidor web con haproxy:
-### 1. Instalamos nginx
+### 1. Instalamos haproxy
 Tras instalar el sistema básico al igual que con nginx instalamos haproxy:
 ```
 sudo apt-get install haproxy
