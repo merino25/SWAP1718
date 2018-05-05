@@ -26,7 +26,9 @@ Editamos el archivo de configuración del sitio default-ssl
 sudo nano /etc/apache2/sites-available/default-ssl
 ```
 Añadimos debajo de "SSLENGINE on"
+
 *SSLCertificateFile /etc/apache2/ssl/apache.crt*
+
 *SSLCertificateKeyFile /etc/apache2/ssl/apache.key*
 ![nanodefaultssl](images/nanodefaultssl.PNG) 
 
