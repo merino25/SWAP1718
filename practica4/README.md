@@ -1,4 +1,4 @@
-# Practica 2. SERVIDORES WEB DE ALTAS PRESTACIONES. UGR
+# Practica 4. SERVIDORES WEB DE ALTAS PRESTACIONES. UGR
 ## Asegurar la granja web
 Los Objetivos son los siguientes:
 Instalar un certificado SSL para configurar el acceso HTTPS a los servidores.
@@ -46,6 +46,7 @@ Ya podemos hacer peticiones por HTTPS con curl:
  ![curlhttpsmaquina1](images/curlhttpsswap1.PNG)
 
 **Instalamos el mismo certificado también en la máquina 2 (swap2)**
+
 Podemos moverlo con rsync:
 ```
 rsync -avz -e ssh swap1@172.20.10.12:/etc/apache2/ssl/* /etc/apache2/ssl/
@@ -84,7 +85,7 @@ Para mas ayuda:
 ```
 man iptables
 ```
-o bien
+o bien:
 ```
 iptables -h
 ```
@@ -93,18 +94,18 @@ iptables -h
 ```
 iptables –L –n -v
 ```
-**Para configurar adecuadamente iptables en una máquina Linux, conviene establecer como reglas por defecto la denegación de TODO el tráfico,**
-**salvo el que permitamos después explícitamente. Una vez hecho esto, a continuación definiremos nuevas reglas para permitir el tráfico**
-**solamente en ciertos sentidos necesarios, ya sea de entrada o de salida. Por último, definiremos rangos de direcciones IP a los cuales**
-**aplicar diversas reglas, y mantendremos registros (logs) del tráfico no permitido y de intentos de acceso para estudiar más tarde posibles ataques.**
+Para configurar adecuadamente iptables en una máquina Linux, conviene establecer como reglas por defecto la denegación de TODO el tráfico, salvo el que permitamos después explícitamente. Una vez hecho esto, a continuación definiremos nuevas reglas para permitir el tráfico solamente en ciertos sentidos necesarios, ya sea de entrada o de salida. Por último, definiremos rangos de direcciones IP a los cuales aplicar diversas reglas, y mantendremos registros (logs) del tráfico no permitido y de intentos de acceso para estudiar más tarde posibles ataques.
 
 **Vamos a configurar el cortafuegos en una de las máquinas servidoras finales (swap1)**
-```
+
 **Para lanzar, reiniciar o salvar las reglas establecidas en el cortafuegos respectivamente**
 ```
 service iptables start
+
 service iptables restart
+
 service iptables stop
+
 service iptables save
 ```
 **Para bloquear todo el tráfico ICMP (ping) (y evitar ataques como el ping de la muerte):**
