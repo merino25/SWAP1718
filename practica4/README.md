@@ -127,7 +127,7 @@ iptables -I OUTPUT -s IPbloqueada -j DROP
 ``` 
 
 
-### 1.1 Podemos crearnos un script con las reglas para que se ejecute al arrancar el sistema
+### 2.2 Podemos crearnos un script con las reglas para que se ejecute al arrancar el sistema
 
 (1) Eliminar todas las reglas (configuración limpia)
 ```
