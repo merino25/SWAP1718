@@ -61,7 +61,7 @@ sudo rsync -avz -e ssh swap1@172.20.10.12:/etc/apache2/ssl/* /etc/ssl/
 ```
 nano /etc/nginx/conf.d/default.conf
 ```
-!nanodefaultconfnginx](images/nanodefaultconfnginx.PNG)
+![nanodefaultconfnginx](images/nanodefaultconfnginx.PNG)
 
 3º Reiniciamos nginx
 ```
@@ -113,40 +113,55 @@ service iptables save
 iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 ``` 
 **Para abrir el puerto 53 para permitir el acceso a DNS:**
+```
 iptables -A INPUT -m state --state NEW -p udp --dport 53 -j ACCEPT
 iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
-
+```
 **Bloquear todo el tráfico de entrada desde una IP:**
+```
 iptables -I INPUT -s IPbloqueada -j DROP
+```
 **Bloquear todo el tráfico de salida hacia una IP:**
+```
 iptables -I OUTPUT -s IPbloqueada -j DROP
- 
+``` 
 
 
 ### 1.1 Podemos crearnos un script con las reglas para que se ejecute al arrancar el sistema
+
 (1) Eliminar todas las reglas (configuración limpia)
+```
 iptables -F           -->vaciado de todas las reglas
 iptables -X           -->borrado de todas las cadenas de reglas
 iptables -Z           -->puesta a cero de todos los contadores de paquetes y bytes
 iptables -t nat -F    -->vaciado de las reglas de la tabla NAT
-
+```
 (2) Política por defecto: denegar todo el tráfico
+```
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
+```
 (3) Permitir cualquier acceso desde localhost (interface lo)
+```
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
+```
 (4) Abrir el puerto 22 para permitir el acceso por SSH
+```
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+```
 (5) Abrir los puertos HTTP (80) de servidor web
+```
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+```
 (6) Abrir los puertos HTTPS (443) de servidor web
+```
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT
-```
+``````
 
 **Para volver a la configuración de la máquina inicial y permitir todo el tráfico**
 ```
