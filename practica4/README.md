@@ -51,6 +51,7 @@ Podemos moverlo con rsync:
 rsync -avz -e ssh swap1@172.20.10.12:/etc/apache2/ssl/* /etc/apache2/ssl/
 ```
 **Vamos a instalar el certificado en nginx:**
+
 1º Vamos a copiar los certificados SSL:
 ```
 sudo rsync -avz -e ssh swap1@172.20.10.12:/etc/apache2/ssl/* /etc/ssl/
