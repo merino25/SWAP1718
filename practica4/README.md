@@ -192,3 +192,12 @@ HTTPS y SSH con tráfico permitido en ambos sentidos para el protocolo TCP:**
 La salida de nuestro script es la siguiente:
 ![salidaconfigiptablessh](images/salidaconfigiptablessh.PNG)
 
+**Si queremos ejecutar nuestro script al arrancar el sistema**
+Modificamos el archivo rc.local
+```
+sudo nano /etc/rc.local
+```
+Añadimos la ruta a nuestro script al final del archivo (antes de exit 0) y guardamos.
+```
+sh /home/swap1/configuracioniptables.sh &
+```
