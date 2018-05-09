@@ -193,6 +193,7 @@ La salida de nuestro script es la siguiente:
 ![salidaconfigiptablessh](images/salidaconfigiptablessh.PNG)
 
 **Si queremos ejecutar nuestro script al arrancar el sistema**
+
 Modificamos el archivo rc.local
 ```
 sudo nano /etc/rc.local
