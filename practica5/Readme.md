@@ -133,6 +133,8 @@ SHOW SLAVE STATUS\G
 
 Ya se replican automáticamente los datos mediante la conexión maestro-esclavo entre nuestras dos máquinas.
 
+:tada:  :tada:  :tada: :tada: :tada: 
+
 
 ### RESULTADOS
 
